@@ -1,0 +1,27 @@
+{% extends 'user_dashboard.html' %}
+
+{% block edit_song %}
+{{playlist_title('Edit Song Details')}}
+
+<form style="margin-top: 5px;" method="post" action="/song/edit/{{ song._id }}"  enctype="multipart/form-data">
+    <p>You Can Not Change Song File</p>
+    <div class="mb-3">
+        <label for="image" class="form-label">Change Thumbnail</label>
+        <input type="file" class="form-control" name="image" id="image"  aria-describedby="">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Song Title</label>
+        <input type="text" name="name" class="form-control" id="name" value="{{ song.name }}" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="lyrics" class="form-label">Lyrics</label>
+        <input type="textarea" name="lyrics" value="{{ song.lyrics }}" class="form-control" id="lyrics">
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm Changes</button>
+</form>
+{% with messages = get_flashed_messages() %} {% if messages %}{% for msg in messages%}
+                <p style="color: rgb(51, 255, 0);">{{ msg }}</p>
+                {% endfor %}{% endif %} {% endwith %}
+
+
+{% endblock %}

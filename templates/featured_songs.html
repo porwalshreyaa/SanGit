@@ -1,0 +1,17 @@
+{% extends 'user_dashboard.html' %}
+
+{% block musicstream %}
+
+
+{{playlist_title('Latest Songs')}}
+
+{{songlist(latest_songs)}}
+<br>
+{{playlist_title('Popular Songs')}}
+
+{{songlist(popular_songs)}}
+<br>
+<br>
+<!-- you can query songs in order of latest or most popular and give that list as input to arrange in that fashion -->
+{% block playsong %}{% endblock %}
+{% endblock %}

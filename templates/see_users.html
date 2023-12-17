@@ -1,0 +1,34 @@
+{% extends 'admin_dashboard.html' %}
+
+{% block see_users %}
+<div class="container row align-items-start gap-2">
+    <!-- user cards -->
+    {% for user in users %}
+
+    <div class="card bg-dark text-light" style="width: 20rem;">
+        
+        <div class="card-body text-white-50">
+            <h5>Username</h5>
+            <h6 class="card-title text-light">{{ user.username }}</h6><hr>
+            <h5>Email</h5>
+            <h6 class="card-title text-light">{{ user.email }}</h6><hr>
+            <h5>Type</h5>
+            <h6 class="card-title text-light">{{ user.user_type }}</h6>
+        </div>
+        <form action="/ban" method="post">
+            {% if user.ban == 'True' %}
+        <button  type="submit" name="user_id" value="{{ user._id }}" class="form-control btn btn-success">Unban</button>
+        {% else %}
+        <button  type="submit" name="user_id"  value="{{ user._id }}" class="form-control btn btn-danger">Ban</button>
+        {% endif %}
+
+
+    </form>
+    </div>
+
+
+    {% endfor %}
+
+
+
+{% endblock %}

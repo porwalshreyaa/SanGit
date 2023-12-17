@@ -1,0 +1,54 @@
+{# common dashboard for creators and users #}
+{% extends 'base.html' %}
+
+{% macro playlist_title(name) -%}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h3 class="h3">{{ name }}</h3>
+</div>
+{%- endmacro %}
+{% macro songlist(songs) -%}
+<div class="container row align-items-start gap-2">
+  <!-- song cards -->
+  {% for song in songs %}
+  <div class="card bg-dark text-light" style="width: 15rem; height: 17rem;">
+    <form id="form" method="get" action="/play">
+      <div class="bg-dark text-light ">
+        <br>
+        <a style="border: none;" name="song_id" href="/play/{{ song._id }}" class="bg-dark card-img ">
+          <img style="margin-top: 0px;" src='../static/images/{{ song.img }}' height="115" class="card-img" alt="...">
+          <figcaption class="figure-caption text-end text-light">{{ song.duration }}</figcaption>
+          <div class="card-body text-white-50">
+            <h6 class="card-title text-light">{{ song.name }}</h6>
+          </div>
+          <p class="figure-caption text-end text-white-50">song</p>
+        </a>
+      </div>
+    </form>
+  </div>
+  {% endfor %}
+  
+</div>
+{%- endmacro %}
+
+
+
+
+<!-- speacial button and even extra bhi abhi sirf users and creators ko  chahiyie -->
+{% block sidebar %}{% endblock %}
+{% block content %}
+<style>
+  li>.dropdown-item:hover {
+    color: black !important;
+  }
+</style>
+{% block myplaylist_results %}{% endblock %}
+{% block search_results %}{% endblock %}
+{% block speacial_form %}{% endblock %}
+{% block profile %}{% endblock %}
+{% block musicstream %}{% endblock %}
+{% block see_tracks %}{% endblock %}
+{% block see_users %}{% endblock %}
+{% block admin_stats %}{% endblock %}
+{% block creator_stats %}{% endblock %}
+{% block edit_song %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'user_dashboard.html' %}
+
+{% block myplaylist_results %}
+<div class="dropdown">
+    <form action="" method="post">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+      Select Songs
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+      {% for song in songs%}
+        <li class=" dropdown-item" >{{song.name}}<input name="addsong[]" type="checkbox" value="{{song._id}}" class=" form-check-input" ></input></li>
+        {% endfor %}
+      <li><hr class="dropdown-divider"></li>
+      <li><button type="submit" value="submit" class="dropdown-item btn-primary btn active" >Add</button></li>
+    </ul>
+  </div>
+   </form>
+    {{playlist_title('songs')}}  
+<div class="container row align-items-start gap-2">
+    <!-- song cards -->
+    {% if song_results%}
+    {{songlist(song_results)}}
+    {% endif %}
+    {% if album_results %}
+    {% for album in album_results %}
+    <div class="card bg-dark text-light" style="width: 15rem; height: 17rem;">
+        <form id="form" method="get" action="">
+            <div class="bg-dark text-light ">
+                <a style="border: none;" name="song_id" href="" class="bg-dark card-img ">
+                    <img style="margin-top: 0px;" src='' class="card-img" alt="...">
+                    <!-- first song image in the album -->
+                    <figcaption class="figure-caption text-end text-light">song count</figcaption>
+                    <div class="card-body text-white-50">
+                        <h6 class="card-title text-light">{{ album.name }}</h6>
+                        <hr>
+                    </div>
+                </a>
+                <p class="figure-caption text-end text-white-50">album</p>
+            </div>
+        </form>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'user_dashboard.html' %}
+
+{% block profile %}
+{{playlist_title('Profile')}}
+<form style="margin-top: 5px;" method="post" action="/profile">
+
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" id="username" value="{{ user.username }}" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" name="email" class="form-control" id="email" value="{{ user.email }}" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input name="password" required type="password" class="form-control" id="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm Changes</button>
+</form>
+{% with messages = get_flashed_messages() %} {% if messages %}{% for msg in messages%}
+                <p style="color: rgb(51, 255, 0);">{{ msg }}</p>
+                {% endfor %}{% endif %} {% endwith %}
+
+
+{% endblock %}
+

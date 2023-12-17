@@ -1,0 +1,88 @@
+{% extends 'admin_dashboard.html' %}
+
+
+{% block admin_stats %}
+
+<div class="container row align-items-start gap-3">
+<br>
+<!-- songs-->
+    <div class="card bg-dark text-light" style="width: 15rem; height: 10rem; padding:10px;">
+      
+        <div class="bg-dark text-light ">
+          <a style="border: none;" name="song_id" href="" class="bg-dark card-img ">
+            
+            <div class="card-body justify-content-center text-white-50">
+            <h4 class="card-title text-light"> Songs</h4>
+              <h1 class="card-title text-white-50"> {{ songs_count}}</h1>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+    
+    <!--users-->
+       <div class="card bg-dark text-light" style="width: 15rem; height: 10rem; padding:10px;">
+      
+        <div class="bg-dark text-light ">
+          <a style="border: none;"  href="/users" class="bg-dark card-img ">
+            
+            <div class="card-body justify-content-center text-white-50">
+            <h4 class="card-title text-light"> Users</h4>
+              <h1 class="card-title text-white-50"> {{ users_count}}</h1>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+    
+ <!--creators-->
+  
+   <div class="card bg-dark text-light" style="width: 15rem; height: 10rem; padding:10px;">
+      
+        <div class="bg-dark text-light ">
+          <a style="border: none;"  href="/creators" class="bg-dark card-img ">
+            
+            <div class="card-body justify-content-center text-white-50">
+            <h4 class="card-title text-light"> Creators</h4>
+              <h1 class="card-title text-white-50"> {{ creators_count}}</h1>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+    <!--albums-->
+     <div class="card bg-dark text-light" style="width: 15rem; height: 10rem; padding:10px;">
+      
+        <div class="bg-dark text-light ">
+          <a style="border: none;" name="song_id" href="" class="bg-dark card-img ">
+            
+            <div class="card-body justify-content-center text-white-50">
+            <h4 class="card-title text-light"> Albums</h4>
+              <h1 class="card-title text-white-50"> {{ creators_count}}</h1>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+   <br>
+   
+  
+   <div class="card bg-dark text-light" style="width: 63rem; height: 25rem; padding:10px;">
+      
+        <div class="bg-dark text-light ">
+          <a style="border: none;" name="song_id" href="" class="bg-dark card-img ">
+            
+            <div class="card-body justify-content-center text-white-50">
+            <h4 class="card-title text-light"> Performance</h4>
+              <h1 class="card-title text-white-50"> stats</h1>
+            </div>
+          </a>
+        </div>
+      
+  
+     </div>
+    
+  </div>
+ 
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'admin_dashboard.html' %}
+
+{% block see_tracks %}
+<div class="container row align-items-start gap-2">
+    <!-- track cards -->
+    {% for track in tracks %}
+    <div class="card bg-dark text-light" style="width: 15rem; height:20rem;">
+        <div class="card-body text-light">
+            <img style="margin-top: 0px; " height="115"  src='../static/images/{{ track.img }}' class="card-img" alt="...">
+            <figcaption class="figure-caption text-end text-light">{{ track.duration }}</figcaption>
+            <div class="card-body text-white-50">
+                <p class="card-title text-light">{{ track.name }}</p>
+                <p class="text-light">Likes</p>
+        <a href="/track/delete/{{ track._id}}" type="button" class="btn btn-danger">Delete</a></div></div>
+    </div>
+    {% endfor %}
+    {% endblock %}
