@@ -13,7 +13,9 @@ but if you want to try it, simply clone it in your machine
 
 commands:
 
-python3 -m venv venv <br>
-. venv/bin/activate <br>
-pip install -r requirements.txt <br>
-python app.py
+<ol>
+  <li>python3 -m venv venv</li>
+  <li>. venv/bin/activate</li>
+  <li>pip install -r requirements.txt</li>
+  <li>python app.py</li>
+</ol>
