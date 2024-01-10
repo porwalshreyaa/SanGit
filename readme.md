@@ -14,8 +14,8 @@ but if you want to try it, simply clone it in your machine
 commands:
 
 <ol>
-  <li>python3 -m venv venv</li>
-  <li>. venv/bin/activate or venv\Scripts\activate </li>
-  <li>pip install -r requirements.txt</li>
-  <li>python app.py</li>
+  <li>`python3 -m venv venv`</li>
+  <li>`. venv/bin/activate or venv\Scripts\activate` </li>
+  <li>`pip install -r requirements.txt`</li>
+  <li>`python app.py`</li>
 </ol>
