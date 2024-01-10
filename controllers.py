@@ -7,13 +7,14 @@ from functools import wraps
 import os
 from mutagen.mp3 import MP3
 from models import *
+from models import db as db
 from sqlalchemy import desc
 current_dir= os.path.abspath(os.path.dirname(__file__))
 # for admin stats
-import matplotlib.pyplot as plt
-from matplotlib.figure import Figure
-import base64
-from io import BytesIO
+#import matplotlib.pyplot as plt
+#from matplotlib.figure import Figure
+#import base64
+#from io import BytesIO
 
 def minsec(seconds):
     seconds = round(seconds)
@@ -478,18 +479,18 @@ def tracks_delete(track_id):
     db.session.commit()
     return redirect(url_for("see_tracks"))
 
-@app.route('/admin/stats')
-@log_req
-@ifban
-def admin_stats():
+#@app.route('/admin/stats')
+#@log_req
+#@ifban
+#def admin_stats():
 
     # Generate the figure **without using pyplot**.
-    fig = Figure()
-    ax = fig.subplots()
-    ax.plot([1, 2])
-    # Save it to a temporary buffer.
-    buf = BytesIO()
-    fig.savefig(buf, format="png")
+ #   fig = Figure()
+ #   ax = fig.subplots()
+ #   ax.plot([1, 2])
+  #  # Save it to a temporary buffer.
+  #  buf = BytesIO()
+  #  fig.savefig(buf, format="png")
     # Embed the result in the html output.
-    data = base64.b64encode(buf.getbuffer()).decode("ascii")
-    return f"<img src='data:image/png;base64,{data}'/>"
+ #   data = base64.b64encode(buf.getbuffer()).decode("ascii")
+ #   return f"<img src='data:image/png;base64,{data}'/>"
