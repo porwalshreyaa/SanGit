@@ -15,7 +15,7 @@ commands:
 
 <ol>
   <li><code>python3 -m venv venv</code></li>
-  <li>`. venv/bin/activate or venv\Scripts\activate` </li>
-  <li>`pip install -r requirements.txt`</li>
-  <li>`python app.py`</li>
+  <li><code>. venv/bin/activate</code> or <code>venv\Scripts\activate</code> </li>
+  <li><code>pip install -r requirements.txt</code></li>
+  <li><code>python app.py</code></li>
 </ol>
