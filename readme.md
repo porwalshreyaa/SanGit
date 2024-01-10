@@ -12,6 +12,7 @@ but if you want to try it, simply clone it in your machine
 </ol>
 
 commands:
+
 python3 -m venv venv <br>
 . venv/bin/activate <br>
 pip install -r requirements.txt <br>
